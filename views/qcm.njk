@@ -1,0 +1,24 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+    {%  for question in questions %}
+        {% set questionIndex = loop.index %}
+        <div class="question">
+            <h2>{{ question }}</h2>
+            <fieldset>
+                {% for answer in question.answers %}
+                    <input
+                            type="radio"
+                            name="{{ question.question }}"
+                            value="{{ answer }}"
+                            id="answer-{{ questionIndex }}-{{ loop.index }}"
+                    >
+                    <label for="answer-{{ questionIndex }}-{{ loop.index }}">
+                        {{ loop.index }}) {{ answer }}
+                    </label>
+                {% endfor %}
+            </fieldset>
+        </div>
+    {% endfor %}
+{% endblock %}
+```
