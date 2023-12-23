@@ -1,0 +1,29 @@
+<form [formGroup]="qcmForm" (ngSubmit)="submitForm()">
+  <input formControlName="name" placeholder="Name">
+  <input formControlName="theme" placeholder="Theme">
+  <input formControlName="subject" placeholder="Subject">
+  <input formControlName="author" placeholder="Author">
+  <input formControlName="nbPoints" placeholder="Number of Points">
+  <div formArrayName="questions">
+    <div class="question-div" *ngFor="let questionCtrl of questionControls; let questionIndex = index" [formGroupName]="questionIndex">
+
+      <div>
+        <button class="rm-qst-btn" type="button" (click)="removeQuestion(questionIndex)">Remove Question</button>
+        <input formControlName="question" placeholder="Question">
+        <input formControlName="answerId" placeholder="Answer position">
+      </div>
+
+      <div id="answers" formArrayName="answers" class="answers">
+        <div class="ans-in-div" *ngFor="let answerCtrl of getAnswerControls(questionIndex); let answerIndex = index" [formGroupName]="answerIndex">
+          <input formControlName="answer" placeholder="Answer">
+          <button type="button" (click)="removeAnswer(questionIndex, answerIndex)">Remove Answer</button>
+        </div>
+      <button id="add-ans-btn" type="button" (click)="addAnswer(questionIndex)">Add Answer</button>
+      </div>
+
+    </div>
+  </div>
+
+  <button type="button" (click)="addQuestion()">Add Question</button>
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,93 @@
+* {
+  transition: all 0.25s ease-in-out;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+form > input {
+  margin: 50px 2% 45px;
+  width: 15%;
+  max-width: 300px;
+  border-radius: 250px;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"],
+button[type="button"], button[type="submit"], button[type="reset"] {
+  background-color: #55ce9a;
+  color: white;
+  cursor: pointer;
+  border-radius: 500px;
+  border: none;
+  padding: 10px 20px;
+  margin: 8px 15px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.question-div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+}
+
+.question-div > div:first-child {
+  background-color: #55ce9a;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: auto;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 50vw;
+}
+
+#add-ans-btn {
+  height: fit-content;
+  align-self: center;
+  padding: 10px 35px;
+}
+
+.ans-in-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ans-in-div input {
+  flex-grow: 1;
+}
+
+button.rm-qst-btn {
+  background-color: white;
+  color: black;
+}
+
+

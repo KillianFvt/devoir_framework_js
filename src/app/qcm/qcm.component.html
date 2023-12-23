@@ -1,0 +1,22 @@
+
+<header>
+  <a [routerLink]="'/qcm/' + (qcm.id - 1)">Previous</a>
+  <a [routerLink]="'/qcm/' + (qcm.id + 1)">Next</a>
+</header>
+
+<main>
+  <h1>{{ qcm.name }}</h1>
+  <h2>{{ qcm.theme }}</h2>
+  <h2>{{ qcm.subject }}</h2>
+  <h2>{{ qcm.nbPoints }} points</h2>
+  <h3>Author : {{ qcm.author }}</h3>
+  <div>
+    <h3>Questions</h3>
+    <div class="question-div" *ngFor="let question of qcm.questionList">
+      <h4>{{ question.question }}</h4>
+      <p class="answer" *ngFor="let answer of question.answers; let i = index" id="answer{{i}}" (click)="onAnswerClick(i, $event, question)">
+        {{ answer }}
+      </p>
+    </div>
+  </div>
+</main>

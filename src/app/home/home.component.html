@@ -1,0 +1,9 @@
+<main>
+  <h1>All available qcms !</h1>
+  <a id="create-qcm-link" routerLink="/qcm/new">Create a new QCM here</a>
+  <ul>
+    <li *ngFor="let qcm of this.QCMList">
+      <a routerLink="/qcm/{{qcm.id}}">{{qcm.name}}</a>
+    </li>
+  </ul>
+</main>
